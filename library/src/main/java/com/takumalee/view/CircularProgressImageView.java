@@ -56,6 +56,8 @@ public class CircularProgressImageView extends ImageView {
     private boolean mSetupPending;
 
     private int progress = 0;
+    private int startColor;
+    private int endColor;
 
     public CircularProgressImageView(Context context) {
         super(context);
@@ -74,6 +76,9 @@ public class CircularProgressImageView extends ImageView {
 
         mBorderWidth = a.getDimensionPixelSize(R.styleable.CircularProgressImageView_border_width, DEFAULT_BORDER_WIDTH);
         mBorderColor = a.getColor(R.styleable.CircularProgressImageView_border_color, DEFAULT_BORDER_COLOR);
+
+        startColor = mBorderColor;
+        endColor = getResources().getColor(android.R.color.holo_green_light);
 
         a.recycle();
 
@@ -122,6 +127,21 @@ public class CircularProgressImageView extends ImageView {
 //            canvas.drawCircle(getWidth() / 2, getHeight() / 2, mBorderRadius, mBorderPaint);
 //        }
 
+        int r1 = Color.red(startColor);
+        int g1 = Color.green(startColor);
+        int b1 = Color.blue(startColor);
+
+        int r2 = Color.red(endColor);
+        int g2 = Color.green(endColor);
+        int b2 = Color.blue(endColor);
+
+        int redStep = r2 - r1;
+        int greenStep = g2 - g1;
+        int blueStep = b2 - b1;
+
+        int changeColor = Color.rgb(r1 + redStep * progress / 360, g1 + greenStep * progress / 360, b1 + blueStep * progress / 360);
+        mBorderPaint.setColor(changeColor);
+
         RectF rectF = new RectF();
         rectF.set(canvas.getWidth() / 2 - mBorderRadius, canvas.getHeight() / 2 - mBorderRadius, canvas.getWidth() / 2 + mBorderRadius, canvas.getHeight() / 2 + mBorderRadius);
         canvas.drawArc(rectF, 270, progress, false, mBorderPaint);
@@ -151,7 +171,6 @@ public class CircularProgressImageView extends ImageView {
             return;
         }
 
-        mBorderColor = borderColor;
         mBorderPaint.setColor(mBorderColor);
         invalidate();
     }
