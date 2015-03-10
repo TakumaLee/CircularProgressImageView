@@ -1,4 +1,4 @@
-package com.takumalee.circularringimageview;
+package com.takumalee.view;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -21,7 +21,7 @@ import android.widget.ImageView;
 /**
  * Created by TakumaLee on 15/1/31.
  */
-public class CircularRingImageView extends ImageView {
+public class CircularProgressImageView extends ImageView {
 
     private static final ScaleType SCALE_TYPE = ScaleType.CENTER_CROP;
 
@@ -57,23 +57,23 @@ public class CircularRingImageView extends ImageView {
 
     private int progress = 0;
 
-    public CircularRingImageView(Context context) {
+    public CircularProgressImageView(Context context) {
         super(context);
 
         init();
     }
 
-    public CircularRingImageView(Context context, AttributeSet attrs) {
+    public CircularProgressImageView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public CircularRingImageView(Context context, AttributeSet attrs, int defStyle) {
+    public CircularProgressImageView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
 
-        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.CircularRingImageView, defStyle, 0);
+        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.CircularProgressImageView, defStyle, 0);
 
-        mBorderWidth = a.getDimensionPixelSize(R.styleable.CircularRingImageView_border_width, DEFAULT_BORDER_WIDTH);
-        mBorderColor = a.getColor(R.styleable.CircularRingImageView_border_color, DEFAULT_BORDER_COLOR);
+        mBorderWidth = a.getDimensionPixelSize(R.styleable.CircularProgressImageView_border_width, DEFAULT_BORDER_WIDTH);
+        mBorderColor = a.getColor(R.styleable.CircularProgressImageView_border_color, DEFAULT_BORDER_COLOR);
 
         a.recycle();
 

@@ -1,12 +1,12 @@
-package com.takumalee.circlarringimageview;
+package com.takumalee.sample;
 
+import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.takumalee.circularringimageview.CircularRingImageView;
+import com.takumalee.view.CircularProgressImageView;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -15,7 +15,7 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        final CircularRingImageView cri = (CircularRingImageView) findViewById(R.id.cri);
+        final CircularProgressImageView cri = (CircularProgressImageView) findViewById(R.id.cri);
         CountDownTimer countDownTimer = new CountDownTimer(10000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
