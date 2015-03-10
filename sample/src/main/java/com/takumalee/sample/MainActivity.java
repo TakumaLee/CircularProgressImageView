@@ -5,29 +5,43 @@ import android.os.CountDownTimer;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import com.takumalee.view.CircularProgressImageView;
 
 
 public class MainActivity extends ActionBarActivity {
 
+    CircularProgressImageView cri;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        final CircularProgressImageView cri = (CircularProgressImageView) findViewById(R.id.cri);
-        CountDownTimer countDownTimer = new CountDownTimer(10000, 1000) {
+        cri = (CircularProgressImageView) findViewById(R.id.cri);
+        Button button = (Button) findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onTick(long millisUntilFinished) {
-                cri.setProgress(100 - (int)millisUntilFinished / 100);
+            public void onClick(View v) {
+                countDownTimer.start();
             }
+        });
 
-            @Override
-            public void onFinish() {
-                cri.setProgress(100);
-            }
-        }.start();
+
     }
+
+    CountDownTimer countDownTimer = new CountDownTimer(10000, 1000) {
+        @Override
+        public void onTick(long millisUntilFinished) {
+            cri.setProgress(100 - (int)millisUntilFinished / 100);
+        }
+
+        @Override
+        public void onFinish() {
+            cri.setProgress(100);
+        }
+    };
 
 
     @Override
