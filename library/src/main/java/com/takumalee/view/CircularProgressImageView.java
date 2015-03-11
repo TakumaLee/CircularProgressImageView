@@ -30,6 +30,8 @@ public class CircularProgressImageView extends ImageView {
 
     private static final int DEFAULT_BORDER_WIDTH = 0;
     private static final int DEFAULT_BORDER_COLOR = Color.BLACK;
+    private static final int DEFAULT_START_COLOR = Color.RED;
+    private static final int DEFAULT_END_COLOR = Color.GREEN;
 
     private final RectF mDrawableRect = new RectF();
     private final RectF mBorderRect = new RectF();
@@ -56,8 +58,8 @@ public class CircularProgressImageView extends ImageView {
     private boolean mSetupPending;
 
     private int progress = 0;
-    private int startColor;
-    private int endColor;
+    private int startColor = DEFAULT_START_COLOR;
+    private int endColor = DEFAULT_END_COLOR;
 
     public CircularProgressImageView(Context context) {
         super(context);
@@ -74,11 +76,11 @@ public class CircularProgressImageView extends ImageView {
 
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.CircularProgressImageView, defStyle, 0);
 
-        mBorderWidth = a.getDimensionPixelSize(R.styleable.CircularProgressImageView_border_width, DEFAULT_BORDER_WIDTH);
-        mBorderColor = a.getColor(R.styleable.CircularProgressImageView_border_color, DEFAULT_BORDER_COLOR);
+        mBorderWidth = a.getDimensionPixelSize(R.styleable.CircularProgressImageView_cpi_border_width, DEFAULT_BORDER_WIDTH);
+        mBorderColor = a.getColor(R.styleable.CircularProgressImageView_cpi_border_color, DEFAULT_BORDER_COLOR);
 
-        startColor = mBorderColor;
-        endColor = getResources().getColor(android.R.color.holo_green_light);
+        startColor = a.getColor(R.styleable.CircularProgressImageView_cpi_start_color, DEFAULT_START_COLOR);
+        endColor = a.getColor(R.styleable.CircularProgressImageView_cpi_start_color, DEFAULT_END_COLOR);
 
         a.recycle();
 
