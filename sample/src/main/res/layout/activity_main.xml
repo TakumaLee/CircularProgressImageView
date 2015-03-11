@@ -9,8 +9,8 @@
         android:id="@+id/cri"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:border_color="@android:color/holo_red_light"
-        app:border_width="10dp"
+        app:cpi_border_color="@android:color/holo_red_light"
+        app:cpi_border_width="10dp"
         android:src="@mipmap/cat_takuma"/>
 
     <Button

@@ -31,10 +31,10 @@ public class MainActivity extends ActionBarActivity {
 
     }
 
-    CountDownTimer countDownTimer = new CountDownTimer(10000, 1000) {
+    CountDownTimer countDownTimer = new CountDownTimer(5000, 500) {
         @Override
         public void onTick(long millisUntilFinished) {
-            cri.setProgress(100 - (int)millisUntilFinished / 100);
+            cri.setProgress(100 - (int)millisUntilFinished / 50);
         }
 
         @Override
