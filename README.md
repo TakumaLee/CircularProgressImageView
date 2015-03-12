@@ -1,1 +1,1 @@
-![Circular Progress ImageView](https://github.com/TakumaMochizuki/CircularProgressImageView/blob/master/raw/sample.gif)
+![Circular Progress ImageView](https://github.com/TakumaMochizuki/CircularProgressImageView/blob/master/raw/newsample.gif)
