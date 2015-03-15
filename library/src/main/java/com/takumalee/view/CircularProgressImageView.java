@@ -18,6 +18,7 @@ import android.net.Uri;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
+
 /**
  * Created by TakumaLee on 15/1/31.
  */

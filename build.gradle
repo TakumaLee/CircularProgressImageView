@@ -6,6 +6,8 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:1.0.1'
+        classpath  'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.0'
+        classpath  'com.github.dcendents:android-maven-plugin:1.2'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -17,3 +19,18 @@ allprojects {
         jcenter()
     }
 }
+
+//uploadArchives {
+//    repositories {
+//        mavenDeployer {
+//            repository(url: "http://YOUR_MAVEN_REPOSTORY_SERVER/URL"){
+//                authentication(userName: "YOUR_USER_NAME", password: "YOUR_PASSWORD")
+//            }
+//            pom.project {
+//                groupId 'com.takumalee'
+//                artifactId 'firstAARLib'
+//                version '1.0.0'
+//                packaging 'jar'
+//            }
+//        }
+//    }
