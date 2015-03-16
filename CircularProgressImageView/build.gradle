@@ -6,7 +6,7 @@ version = "1.0"
 
 def siteUrl = 'http://takuma-nekomayoi-blog.logdown.com/'     // project homepage
 def gitUrl = 'https://github.com/TakumaMochizuki/CircularProgressImageView.git'  // project git
-group = "com.takumalee"
+group = "com.github.takumalee"
 
 android {
     compileSdkVersion 21
@@ -42,7 +42,7 @@ install {
                 }
                 developers {
                     developer {
-                        id 'TakumaLee'
+                        id 'takumalee'
                         name 'takumalee'
                         email 'vmgsahm1@gmail.com'
                     }
@@ -79,8 +79,8 @@ artifacts {
 Properties properties = new Properties()
 properties.load(project.rootProject.file('local.properties').newDataInputStream())
 bintray {
-    user = properties.getProperty("bintray.user")
     key = properties.getProperty("bintray.apikey")
+    user = properties.getProperty("bintray.user")
     configurations = ['archives']
     pkg {
         repo = "maven"

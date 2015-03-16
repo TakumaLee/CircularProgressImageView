@@ -1,4 +1,4 @@
-package com.takumalee.view;
+package com.github.takumalee.view;
 
 import android.content.Context;
 import android.content.res.TypedArray;

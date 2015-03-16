@@ -8,7 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-import com.takumalee.view.CircularProgressImageView;
+import com.github.takumalee.view.CircularProgressImageView;
 
 
 public class MainActivity extends ActionBarActivity {
