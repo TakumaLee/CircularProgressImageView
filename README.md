@@ -6,7 +6,12 @@
 
 ## How to use
 
-### xml
+### 1. Dependencies
+```gradle
+	compile 'com.github.takumalee:CircularProgressImageView:1.0'
+```
+
+### 2. xml
 ```java
 <com.takumalee.view.CircularProgressImageView
         android:id="@+id/cri"
@@ -17,7 +22,7 @@
         android:src="@mipmap/cat_takuma"/>
 ```
 
-### java
+### 3. java
 
 ```java
 CircularProgressImageView  cri = (CircularProgressImageView) findViewById(R.id.cri);
