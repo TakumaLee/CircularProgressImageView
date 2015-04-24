@@ -8,7 +8,7 @@
 
 ### 1. Dependencies
 ```gradle
-	compile 'com.github.takumalee:CircularProgressImageView:1.0'
+	compile 'com.github.takumalee:CircularProgressImageView:1.0.1'
 ```
 
 ### 2. xml
